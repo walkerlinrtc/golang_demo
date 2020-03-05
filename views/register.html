@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>preview</title>
+    <script src ="../static/js/lib/test.js"></script>
+</head>
+<script type="text/javascript">
+    function check(form){
+        if (!form.username.value){
+            form.username.value = "用户名不能为空!";
+            return false;
+        }
+        if(!form.password.value){
+            alert('密码不能为空');
+            return false;
+        }else if(form.password.value!=form.repassword.value){
+            alert('密码两次不一致');
+            return false;
+        }
+        document.myform.submit();
+        return true;
+    }
+</script><body>
+            <h1>南京邮电大学远程光学实验云平台</h1>
+            <form id="register-form" class="form" name="myform" method="post">
+                <input type="text" name="username" placeholder="Username" value="">
+                <input type="password" name="password" placeholder="Password" id="register-password" value="">
+                <input type="password" name="repassword" placeholder="rePassword" id="register-password" value="">
+                <input type="text" name="schoolname" placeholder="Schoolname" value="">
+                <br>
+                <input type="button" id="login-button" value="注册" onclick="check(this.form)">
+                <!--<input type="submit" id="login-button" value="登录">-->
+            </form>
+</body>
+</html>
